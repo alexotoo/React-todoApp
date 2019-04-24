@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import TodoList from "./Component/TodoList";
+import TodoInput from "./Component/TodoInput";
+import uuid from "uuid";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-10 max-auto col-md-8 mt-4">
+            <h3 className="text-capitalize text-center">Todo Inputttt</h3>
+            <TodoList />
+            <TodoInput />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
