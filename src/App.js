@@ -12,10 +12,13 @@ export default class App extends Component {
     editItem: false
   };
   // to avoid binding in contructor us arrow functions
-  handleChange = c => {
+  handleChange = e => {
     this.setState({
-      item: c.target.value
+      item: e.target.value
     });
+  };
+  handleSubmit = e => {
+    e.preventDefault();
   };
   render() {
     return (
@@ -26,6 +29,7 @@ export default class App extends Component {
             <TodoInput
               item={this.state.item}
               handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
             />
             <TodoList />
           </div>
