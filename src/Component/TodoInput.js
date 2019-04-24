@@ -5,6 +5,7 @@ export default class TodoInput extends Component {
     const { item, handleChange, handleSubmit } = this.props;
     return (
       <div className="card card-body my-3">
+        {/* always put the onSubmit={handleSubmit} as a attribute of the form to enable it */}
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <div className="input-group-prepend">

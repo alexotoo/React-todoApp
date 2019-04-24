@@ -7,7 +7,8 @@ import uuid from "uuid";
 export default class App extends Component {
   state = {
     items: [],
-    id: 0,
+    // uui is an id generator which helps solves the key problems
+    id: uuid(),
     item: "",
     editItem: false
   };
@@ -19,7 +20,22 @@ export default class App extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
+
+    const newItem = {
+      id: this.state.id,
+      item: this.state.item
+    };
+
+    // states can't be changed without setState but spreed Operators can be used to work around it
+    const updatedItems = [...this.state.items, newItem];
+
+    this.setState({
+      items: updatedItems,
+      id: uuid(),
+      editItem: false
+    });
   };
+
   render() {
     return (
       <div className="container">
@@ -31,7 +47,7 @@ export default class App extends Component {
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
             />
-            <TodoList />
+            <TodoList items={this.state.items} />
           </div>
         </div>
       </div>
