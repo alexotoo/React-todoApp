@@ -22,8 +22,8 @@ export default class App extends Component {
     e.preventDefault();
 
     const newItem = {
-      id: this.state.id,
-      item: this.state.item
+      newid: this.state.id,
+      newtodo: this.state.item
     };
 
     // states can't be changed without setState but spreed Operators can be used to work around it
