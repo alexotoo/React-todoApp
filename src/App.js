@@ -11,8 +11,8 @@ export default class App extends Component {
         <div className="row">
           <div className="col-10 max-auto col-md-8 mt-4">
             <h3 className="text-capitalize text-center">Todo Inputttt</h3>
-            <TodoList />
             <TodoInput />
+            <TodoList />
           </div>
         </div>
       </div>
