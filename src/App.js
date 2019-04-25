@@ -22,8 +22,8 @@ export default class App extends Component {
     e.preventDefault();
 
     const newItem = {
-      newid: this.state.id,
-      newtodo: this.state.item
+      id: this.state.id,
+      todo: this.state.item
     };
 
     // states can't be changed without setState but spreed Operators can be used to work around it
@@ -33,6 +33,18 @@ export default class App extends Component {
       items: updatedItems,
       id: uuid(),
       editItem: false
+    });
+  };
+  clearList = () => {
+    // this will set the items back to empty
+    this.setState({
+      items: []
+    });
+  };
+  handleDelete = id => {
+    const filteredItems = this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: filteredItems
     });
   };
 
@@ -47,7 +59,11 @@ export default class App extends Component {
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
             />
-            <TodoList items={this.state.items} />
+            <TodoList
+              items={this.state.items}
+              clearList={this.clearList}
+              handleDelete={this.handleDelete}
+            />
           </div>
         </div>
       </div>
