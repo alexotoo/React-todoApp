@@ -54,7 +54,9 @@ export default class App extends Component {
     const selectedItem = this.state.items.find(item => item.id == id);
     this.setState({
       items: filteredItems,
-      item: selectedItem.todo
+      item: selectedItem.todo,
+      editItem: true,
+      id: id
     });
   };
 
@@ -68,6 +70,7 @@ export default class App extends Component {
               item={this.state.item}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
+              editItem={this.state.editItem}
             />
             <TodoList
               items={this.state.items}

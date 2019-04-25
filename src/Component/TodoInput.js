@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class TodoInput extends Component {
   render() {
-    const { item, handleChange, handleSubmit } = this.props;
+    const { item, handleChange, handleSubmit, editItem } = this.props;
     return (
       <div className="card card-body my-3">
         {/* always put the onSubmit={handleSubmit} as a attribute of the form to enable it */}
@@ -22,7 +22,8 @@ export default class TodoInput extends Component {
             />
           </div>
           <button type="submit" className="btn btn-block btn-primary mt-3">
-            add an item
+            {/* use tenary conditional rendering to change the button lables */}
+            {editItem ? "edit item" : "add an item"}
           </button>
         </form>
       </div>
