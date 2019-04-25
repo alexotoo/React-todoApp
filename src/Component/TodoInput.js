@@ -21,7 +21,14 @@ export default class TodoInput extends Component {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-block btn-primary mt-3">
+          <button
+            type="submit"
+            className={
+              editItem
+                ? "btn btn-block btn-success mt-3"
+                : "btn btn-block btn-primary mt-3"
+            }
+          >
             {/* use tenary conditional rendering to change the button lables */}
             {editItem ? "edit item" : "add an item"}
           </button>
