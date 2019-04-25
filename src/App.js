@@ -47,7 +47,12 @@ export default class App extends Component {
       items: filteredItems
     });
   };
-  handleEdit = id => {};
+  handleEdit = id => {
+    const filteredItems = this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: filteredItems
+    });
+  };
 
   render() {
     return (
