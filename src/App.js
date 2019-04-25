@@ -31,6 +31,7 @@ export default class App extends Component {
 
     this.setState({
       items: updatedItems,
+      item: "",
       id: uuid(),
       editItem: false
     });

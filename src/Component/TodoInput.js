@@ -23,6 +23,7 @@ export default class TodoInput extends Component {
           </div>
           <button
             type="submit"
+            // this will toggle the edit button from red blue to green
             className={
               editItem
                 ? "btn btn-block btn-success mt-3"
